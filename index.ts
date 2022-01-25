@@ -16,9 +16,11 @@ server.app.use(cors ({origin:true, credentials:true}));
 server.app.use('/user', UserRoutes);
 server.app.use('/post', postRoutes);
 
+    const uri = "mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver?retryWrites=true&w=majority";
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/loginserver',
+
+mongoose.connect(uri,
     (err)=>{
     if(err) throw err;
     console.log('base de datos online');
