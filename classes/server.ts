@@ -1,9 +1,10 @@
 import express from 'express';
+require('dotenv').config();
 
 export default class Server {
 
     public app: express.Application;
-    public port =  process.env.port ||  3000;
+    public port =  process.env.PORT;
 
     constructor(){
         this.app = express();

@@ -4,9 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+require('dotenv').config();
 class Server {
     constructor() {
-        this.port = process.env.port || 3000;
+        this.port = process.env.PORT;
         this.app = (0, express_1.default)();
     }
     start(callback) {
