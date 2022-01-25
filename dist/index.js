@@ -9,13 +9,13 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const post_1 = __importDefault(require("./routes/post"));
 const cors_1 = __importDefault(require("cors"));
+const uri = 'mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver';
 const server = new server_1.default();
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
 server.app.use(body_parser_1.default.json());
 server.app.use((0, cors_1.default)({ origin: true, credentials: true }));
 server.app.use('/user', usuario_1.default);
 server.app.use('/post', post_1.default);
-const uri = "mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver?retryWrites=true&w=majority";
 mongoose_1.default.connect(uri, (err) => {
     if (err)
         throw err;

@@ -4,7 +4,9 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser';
 import postRoutes from "./routes/post";
 import cors from 'cors';
+import * as dotenv from 'dotenv';
 
+const uri = 'mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver';
 
 const server = new Server(); 
 
@@ -15,10 +17,6 @@ server.app.use(cors ({origin:true, credentials:true}));
 
 server.app.use('/user', UserRoutes);
 server.app.use('/post', postRoutes);
-
-    const uri = "mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver?retryWrites=true&w=majority";
-
-
 
 mongoose.connect(uri,
     (err)=>{
