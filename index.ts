@@ -16,10 +16,12 @@ server.app.use(cors ({origin:true, credentials:true}));
 server.app.use('/user', UserRoutes);
 server.app.use('/post', postRoutes);
 
-mongoose.connect('mongodb://localhost:27017/loginserver',
+
+
+mongoose.connect('mongodb+srv://jhonbastidas98:0H7C7xeRpJAIlz91@api-rest.jbgfe.mongodb.net/loginserver',
     (err)=>{
     if(err) throw err;
-    console.log('base de datos online ');
+    console.log('base de datos online');
 });
 
 
