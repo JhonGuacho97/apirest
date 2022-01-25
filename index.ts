@@ -18,7 +18,7 @@ server.app.use('/post', postRoutes);
 
 
 
-mongoose.connect('mongodb://localhost:27017/loginserver',
+mongoose.connect(process.env.MONGODB_CNN || 'mongodb://localhost:27017/loginserver',
     (err)=>{
     if(err) throw err;
     console.log('base de datos online');

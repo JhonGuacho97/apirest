@@ -15,7 +15,7 @@ server.app.use(body_parser_1.default.json());
 server.app.use((0, cors_1.default)({ origin: true, credentials: true }));
 server.app.use('/user', usuario_1.default);
 server.app.use('/post', post_1.default);
-mongoose_1.default.connect('mongodb://localhost:27017/loginserver', (err) => {
+mongoose_1.default.connect(process.env.MONGODB_CNN || 'mongodb://localhost:27017/loginserver', (err) => {
     if (err)
         throw err;
     console.log('base de datos online');
